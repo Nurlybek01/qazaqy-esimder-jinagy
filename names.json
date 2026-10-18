@@ -1,0 +1,42 @@
+[
+    {
+        "id": "aruzhan",
+        "name": "Аружан",
+        "gender": "female"
+    },
+    {
+        "id": "bekarys",
+        "name": "Бекарыс",
+        "gender": "male"
+    },
+    {
+        "id": "inzhu",
+        "name": "Інжу",
+        "gender": "female"   
+    },
+    {
+        "id": "kunsulu",
+        "name": "Күнсұлу",
+        "gender": "female"
+    },
+    {
+        "id": "nazerke",
+        "name": "Назерке",
+        "gender": "female"
+    },
+    {
+        "id": "kaisar",
+        "name": "Қайсар",
+        "gender": "male"
+    },
+    {
+        "id": "arman",
+        "name": "Арман",
+        "gender": "male"
+    },
+    {
+        "id": "erasyl",
+        "name": "Ерасыл",
+        "gender": "male"
+    }
+]

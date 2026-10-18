@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Қазақы есімдер жинағы</title>
+    <style>
+        body {background-color: #F7F5EF;
+            font-family: Arial, sans-serif;
+            text-align: center;}
+        h1 {
+            color: #244331;
+            font-size: 40px;
+        }
+        button {
+            border-radius: 20px;
+            padding: 10px 20px;
+            border: 1px solid #244331;
+            background-color: #C6A56B;
+            color: white;
+            cursor: pointer;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #DCD8CC;
+        }
+        div {
+            gap: 10px;
+            justify-content: center;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>Қазақы есімдер жинағы</h1>
+    <h2>Әр есімнің өз мағынасы бар</h2>
+    <p>Балаңызға мағынасы өзіңізге жақын есімді табыңыз.</p>
+    <input type="text" placeholder="Есім іздеу...">
+    <div>  
+        <button id="maleButton">Ұл бала</button>
+        <button id="femaleButton">Қыз бала</button>
+    </div>
+    <h2>Танымал есімдер</h2>
+    <div id="namesList">
+        <p>Аружан</p>
+        <p>Бекарыс</p>
+    </div>
+    <script>
+        const names = [
+            { name: "Аружан", gender: "female"},
+            { name: "Бекарыс", gender: "male"},
+            { name: "Арман", gender: "male"}
+        ];
+        const maleButton = document.getElementById('maleButton');
+        const femaleButton = document.getElementById('femaleButton');
+        const namesList = document.getElementById('namesList');
+
+        function showNames(gender) {
+            const filteredNames = names.filter(function(item) {
+                return item.gender === gender;
+            });
+
+            namesList.innerHTML = filteredNames
+                .map(function(item) {
+                    return `<p>${item.name}</p>`;
+                })
+                .join("");
+        }
+
+        maleButton.addEventListener("click", function() {
+            showNames("male");
+        });
+
+        femaleButton.addEventListener("click", function() {
+            showNames("female");
+        });
+
+    </script>
+</body>
+</html>
