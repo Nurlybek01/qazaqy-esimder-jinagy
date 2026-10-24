@@ -1,0 +1,86 @@
+export const translations = {
+  kk: {
+    languageSwitchLabel: "Тілді таңдау",
+    homeLabel: "Қазақы есімдер жинағы — басты бет",
+    homeLink: "Басты бетке",
+    backToCatalog: "Каталогқа оралу",
+    nameNotFound: "Есім табылмады",
+    nameField: "Есім",
+    genderField: "Жынысы",
+    brand: "Есімдер жинағы",
+    eyebrow: "АТЫҢЫЗ — ӨЗІҢІЗДІҢ ТАРИХЫҢЫЗ",
+    title: "Қазақы есімдер жинағы",
+    subtitle: "Әр есімнің өз мәні бар",
+    searchHeading: "Балаңызға есімді бірге таңдайық",
+    promptPlaceholder:
+      "Мысалы: Ұлымның есімі батылдық пен мейірімділікті білдірсе деймін...",
+    examplesLabel: "Мысалдар:",
+    examples: ["Батыл ұл есімі", "Нәзік қыз есімі", "Табиғатқа қатысты"],
+    submit: "Есім таңдау",
+    unavailable: "ИИ-іздеу әзірге қосылмаған.",
+    chooseYourself: "немесе таңдауды өзіңіз жасаңыз",
+    catalogTitle: "Барлық есімдер",
+    catalogDescription: "Есімдерді іздеу және сүзу",
+    catalogSearchLabel: "Есім бойынша іздеу",
+    catalogSearchPlaceholder: "Есім іздеу...",
+    genderLabel: "Жынысы",
+    allGenders: "Барлығы",
+    male: "Ұл бала",
+    female: "Қыз бала",
+    letterLabel: "Әріп",
+    allLetters: "Барлық әріп",
+    chooseLetter:
+      "Бастау үшін әріпті таңдаңыз, жынысы бойынша сүзгіні немесе іздеуді қолданыңыз.",
+    noNames: "Есім табылмады",
+    showMore: "Тағы көрсету",
+    footer: "Мағынасы бар есімдер — ұрпаққа қалған мұра.",
+    documentTitle: "Қазақы есімдер жинағы",
+    nameCountLabel: "есім",
+  },
+  ru: {
+    languageSwitchLabel: "Выбор языка",
+    homeLabel: "Сборник казахских имён — главная",
+    homeLink: "На главную",
+    backToCatalog: "Назад к каталогу",
+    nameNotFound: "Имя не найдено",
+    nameField: "Имя",
+    genderField: "Пол",
+    brand: "Сборник имён",
+    eyebrow: "ВАШЕ ИМЯ — ВАША ИСТОРИЯ",
+    title: "Сборник казахских имён",
+    subtitle: "У каждого имени есть свой смысл",
+    searchHeading: "Давайте вместе выберем имя для ребёнка",
+    promptPlaceholder:
+      "Например: Хочется, чтобы имя сына отражало смелость и доброту...",
+    examplesLabel: "Например:",
+    examples: ["Смелое имя для мальчика", "Нежное имя для девочки", "Связь с природой"],
+    submit: "Подобрать",
+    unavailable: "ИИ-поиск пока не подключён.",
+    chooseYourself: "или выберите сами",
+    catalogTitle: "Все имена",
+    catalogDescription: "Ищите и фильтруйте имена",
+    catalogSearchLabel: "Поиск по имени",
+    catalogSearchPlaceholder: "Введите имя...",
+    genderLabel: "Пол",
+    allGenders: "Все",
+    male: "Мальчик",
+    female: "Девочка",
+    letterLabel: "Буква",
+    allLetters: "Все буквы",
+    chooseLetter:
+      "Чтобы начать, выберите букву, фильтр по полу или воспользуйтесь поиском.",
+    noNames: "Имя не найдено",
+    showMore: "Показать ещё",
+    footer: "Имена со смыслом — наследие для будущих поколений.",
+    documentTitle: "Сборник казахских имён",
+    nameCountLabel: ["имя", "имени", "имён"],
+  },
+};
+
+export function formatNameCount(count, language, text) {
+  if (language === "kk") return `${count} ${text.nameCountLabel}`;
+
+  const plural = new Intl.PluralRules("ru").select(count);
+  const index = plural === "one" ? 0 : plural === "few" ? 1 : 2;
+  return `${count} ${text.nameCountLabel[index]}`;
+}
